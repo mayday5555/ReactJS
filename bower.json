@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "react": "^15.3.0"
+    "react": "^15.3.0",
+    "babel": "https://github.com/zce/babel"
   },
   "overrides": {
     "bootstrap": {

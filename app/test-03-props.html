@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>react</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container" author="mayday" children="aaa">
+
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/react/react.min.js"></script>
+    <script src="/bower_components/react/react-dom.min.js"></script>
+    <script src="/scripts/build/browser.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/plugins.js -->
+
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script type="text/babel">
+      var a = [1, 2, 3, 4]
+      var Comment = React.createClass({
+        render: function() {
+          console.log(this);
+          return (
+            <div className="comment">
+              <h1 class="commentAuthor">
+                {this.props.author}
+              </h1>
+              {this.props.children}
+            </div>
+          );
+        }
+      });
+      var CommentBox = React.createClass({
+        render: function() {
+          return (
+            <div class="commentList">
+              I'm commentList;
+              <Comment author="1" children="aaa"/>
+            </div>
+          )
+        }
+      });
+      ReactDOM.render(
+        <CommentBox />,
+        $('.container')[0]
+      );
+
+    </script>
+    <!-- endbuild -->
+  </body>
+</html>
